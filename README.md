@@ -4,7 +4,7 @@
 This is a command-line app that keeps track of an employee database.  Using inquirer, the user can view prompts of different tasks such as view all department, roles, and employees; along with, adding a new department, role, and updating an existing employee by using mysql. 
 
 ## Links
-- [github repo]()
+- [github repo](https://github.com/hufflk96/Employee.git)
 - [Video Demo]()
 
 ## Table of Contents
