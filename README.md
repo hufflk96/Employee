@@ -16,7 +16,7 @@ Command line application that keeps track of employees databases that untilizes 
 - [Questions](#questions)
 
 ## Installation
-Clone the repo into your vs code, install inquirer if needed by typing "npm i inquirer@8.2.4" in the terminal and run it by typing "node index.js".  This application also requires node.js and mysql2 to be installed.  To start the application, just type npm start in your console.
+Clone the repository, install inquirer by typing "npm i inquirer@8.2.4" in the terminal. To start the application, just type npm start in your console.
 
 ## Usage
 Example Screenshot
