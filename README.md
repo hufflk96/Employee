@@ -1,7 +1,7 @@
-# emerald-employee-tracker
+# LKH Employee Tracker
 
 ## Description
-This is a command-line app that keeps track of an employee database.  Using inquirer, the user can view prompts of different tasks such as view all department, roles, and employees; along with, adding a new department, role, and updating an existing employee by using mysql. 
+Command line application that keeps track of employees databases that untilizes inquirer, mysql2, and console.table
 
 ## Links
 - [github repo](https://github.com/hufflk96/Employee.git)
