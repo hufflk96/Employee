@@ -12,7 +12,6 @@ Command line application that keeps track of employees databases that untilizes 
 - [Usage](#usage)  
 - [License](#license)  
 - [Tests](#tests)  
-- [Contact Me](#contact me)
 
 ## Installation
 Clone the repository, install inquirer by typing "npm i inquirer@8.2.4" in the terminal. To start the application, just type npm start in your console.
