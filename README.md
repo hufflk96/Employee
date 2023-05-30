@@ -4,7 +4,7 @@
 Command line application that keeps track of employees databases that untilizes inquirer, mysql2, and console.table
 
 ## Links
-- [github repo](https://github.com/hufflk96/Employee.git)
+- [github](https://github.com/hufflk96/Employee.git)
 - [Video Demo]()
 
 ## Table of Contents
