@@ -23,7 +23,7 @@ Example Screenshot
 No license
 
 ## Tests
-Application does not use tests
+No Tests
 
 ## Contact Me
 GitHub username: hufflk96, 
