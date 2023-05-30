@@ -1,22 +1,14 @@
-//importing inquirer
 const inquirer = require('inquirer'); 
-//importing mysql
 const mysql = require('mysql2');
-//importing console.table
 const cTable = require('console.table');
-//importing colors to stylize the console 
 var colors = require('colors');
 var colors = require('colors/safe');
 
 require('dotenv').config();
-
-//connecting to sql database
 const db = mysql.createConnection(
     {
     host: 'localhost',
-      // MySQL username,
     user: 'root',
-      // MySQL password - password protected by .env
     password: process.env.DB_PASSWORD,
     database: 'employee_db'
     },
@@ -28,8 +20,6 @@ db.connect(function(error) {
     console.log("connected at " + db.threadID+"\n");
     promptUser();
 })
-
-//setting up inquirer prompts for the user to answer
 const promptUser = () => {
     return inquirer.prompt ([
         {
@@ -117,10 +107,6 @@ const promptUser = () => {
 
     }) 
 }
-
-//defining functions to go with user choices
-
-//function will show all departments (Department ID, and department name) when selected
 function showDepartments(){
 
     const mySql = `SELECT department.id AS id, department.name AS name FROM department`; 
@@ -135,8 +121,6 @@ function showDepartments(){
         promptUser();
     });
 };
-
-//function will show all roles when selected.  (will show role id, title, department name, and salary)
 function showRoles(){
 
     const mySql = `SELECT role.id, role.title, department.name AS department, role.salary 
@@ -152,9 +136,7 @@ function showRoles(){
         console.log("----------------------------------------------".rainbow);
         promptUser();
     })
-};
-
-//function will show all employees when selected 
+}; 
 function showEmployees(){
 
     const mySql = `SELECT employee.id, 
@@ -179,8 +161,6 @@ function showEmployees(){
         promptUser();
     });
 };
-
-//function will add a new department to the DB
 function addDepartment(){
     inquirer.prompt([
         {
@@ -199,8 +179,6 @@ function addDepartment(){
         });
     });
 };
-
-//function adds a new role to the DB - user will need to input the role name, salary, and the deparment it belongs in
 function addRole(){
     inquirer.prompt([
         {
@@ -216,8 +194,6 @@ function addRole(){
     ])
         .then(answer => {
             const roleSalary = [answer.role, answer.salary];
-    
-          // getting the dept from dept table
             const roleDb = `SELECT name, id FROM department`; 
     
             db.query(roleDb, (err, data) => {
@@ -248,8 +224,6 @@ function addRole(){
     });
     });
 };
-
-//function will add a new employee to DB.  User will enter first/last name, select the role, and assign a manager
 function addEmployee(){
     inquirer.prompt([
         {
@@ -265,8 +239,6 @@ function addEmployee(){
     ])
         .then(answer => {
         const newEmployee = [answer.fistName, answer.lastName]
-    
-        // getting the roles from roles table
         const roleDb = `SELECT role.id, role.title FROM role`;
         db.query(roleDb, (err, data) => {
             if (err) throw err;  
@@ -318,8 +290,6 @@ function addEmployee(){
         });
     });
 };
-
-//function will update an employee role - it will have the user select a current employee from the list and assign it a new role
 function updateRole(){
     const employeeDb = `SELECT * FROM employee`;
 
@@ -374,8 +344,6 @@ function updateRole(){
     });
     });
 };
-
-//function to update employee managers
 function updateManager(){
     const employeeDb = `SELECT * FROM employee`;
 
@@ -433,8 +401,6 @@ function updateManager(){
     });
     });
 };
-
-//function to view employees by manager
 function viewManager(){
     const managerDb = `SELECT * FROM employee WHERE manager_id IS NULL`;
     
@@ -476,8 +442,6 @@ function viewManager(){
     });
 });
 };
-
-//function to view employees by department
 function viewDepartment(){
     const deptDb = `SELECT * FROM department`;
 
@@ -519,8 +483,6 @@ function viewDepartment(){
 
     });          
 };
-
-//function to delete department
 function deleteDept(){
     const deptDb = `SELECT * FROM department`; 
 
@@ -550,8 +512,6 @@ function deleteDept(){
     });
     });
 };
-
-//function to delete Role
 function deleteRole(){
     const roleDb = `SELECT * FROM role`; 
 
@@ -581,8 +541,6 @@ function deleteRole(){
     });
     });
 };
-
-//function to delete Employee
 function deleteEmp(){
     const employeeDb = `SELECT * FROM employee`;
 
@@ -613,8 +571,6 @@ function deleteEmp(){
     });
     });
 };
-
-//function to view the total utilized budget of a department (the combined salaries of all employees in a dept)
 function viewBudget(){
     const mySql = `SELECT department_id AS id, 
                 department.name AS department,
