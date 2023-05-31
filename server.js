@@ -166,7 +166,7 @@ function addDepartment(){
         {
             type: 'input', 
             name: 'addDept',
-            message: "Please add a department",
+            message: "Add Department",
         }
     ])
         .then(answer => {
@@ -184,12 +184,12 @@ function addRole(){
         {
             type: 'input', 
             name: 'role',
-            message: "Enter the new role",
+            message: "Add Role",
         },
         {
             type: 'input', 
             name: 'salary',
-            message: "Enter the salary of this role",
+            message: "Input Role Salary",
         }
     ])
         .then(answer => {
@@ -205,7 +205,7 @@ function addRole(){
             {
                 type: 'list', 
                 name: 'dept',
-                message: "Select the correct department for this new role.",
+                message: "Department for Role",
                 choices: dept
             }
             ])
@@ -229,12 +229,12 @@ function addEmployee(){
         {
             type: 'input',
             name: 'fistName',
-            message: "Enter the employee's first name.",
+            message: "Employee First Name",
         },
         {
             type: 'input',
             name: 'lastName',
-            message: "Enter the employee's last name.",
+            message: "Employee Last Name",
         }
     ])
         .then(answer => {
@@ -248,7 +248,7 @@ function addEmployee(){
             {
                 type: 'list',
                 name: 'role',
-                message: "Select the employee's role",
+                message: "Employee Role",
                 choices: roles
             }
             ])
@@ -267,7 +267,7 @@ function addEmployee(){
                     {
                         type: 'list',
                         name: 'manager',
-                        message: "Select the employee's manager.",
+                        message: "Employee Manager",
                         choices: managers
                     }
                     ])
@@ -301,7 +301,7 @@ function updateRole(){
         {
             type: 'list',
             name: 'name',
-            message: "Select an employee to update",
+            message: "Update Employee",
             choices: employees
         }
     ])
@@ -321,7 +321,7 @@ function updateRole(){
                 {
                     type: 'list',
                     name: 'role',
-                    message: "Select the employee's new role",
+                    message: "Employee New Role",
                     choices: roles
                 }
             ])
@@ -356,7 +356,7 @@ function updateManager(){
         {
             type: 'list',
             name: 'name',
-            message: "Select an employee to update",
+            message: "Update Employee",
             choices: employees
         }
     ])
@@ -376,7 +376,7 @@ function updateManager(){
                     {
                         type: 'list',
                         name: 'manager',
-                        message: "Select the employee's manager",
+                        message: "Employee Manager",
                         choices: managers
                     }
                 ])
@@ -413,7 +413,7 @@ function viewManager(){
         {
             type: 'list',
             name: 'manager',
-            message: "Select a manager.",
+            message: "Manager Selection",
             choices: managers
         }
         ])
@@ -453,7 +453,7 @@ function viewDepartment(){
             {
                 type: 'list',
                 name: 'departmentID', 
-                message: 'Select a department',
+                message: "Department Selection",
                 choices: depts
             }
         ])
@@ -495,7 +495,7 @@ function deleteDept(){
         {
             type: 'list', 
             name: 'dept',
-            message: "Select a department to delete",
+            message: "Department to be Removed",
             choices: dept
         }
     ])
@@ -506,7 +506,7 @@ function deleteDept(){
         db.query(mySql, dept, (err, result) => {
             if (err) throw err;
             console.log("----------------------------------------------".rainbow);
-            console.log(colors.red.bold("Department has been deleted!")); 
+            console.log(colors.red.bold("Department Removed!);
         showDepartments();
         });
     });
@@ -524,7 +524,7 @@ function deleteRole(){
         {
             type: 'list', 
             name: 'role',
-            message: "Select a role to delete.",
+            message: "Role to be Removed",
             choices: role
         }
     ])
@@ -553,7 +553,7 @@ function deleteEmp(){
         {
             type: 'list',
             name: 'name',
-            message: "Select an employee to delete.",
+            message: "Employee to be Removed",
             choices: employees
         }
     ])
